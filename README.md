@@ -8,13 +8,13 @@ Copy uploadify.php and views folder to components.
 
 Import uploadify.js and uploadify.css in your views:
 
-`
+```html
 <link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css" />
-`
+```
 
-`
+```html
 <script type="text/javascript" src="/uploadify/jquery.uploadify.min.js"></script>
-`
+```
 
 Then put the widget where you want:
 
@@ -26,10 +26,10 @@ Then put the widget where you want:
 ```
 
 This will print html code on the page:
-`
+```html
 <input id="Customer_license" type="hidden" value="" name="Customer[license]">
 <input type="file" name="yii_uploadify_Customer_license" id="yii_uploadify_Customer_license" />
-`
+```
 
 Afer that,write js to active it:
 
@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 #Sample
 
-`
+```html
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css" />
@@ -77,4 +77,4 @@ $(document).ready(function(){
 	</script>
 </body>
 </html>
-`
+```
