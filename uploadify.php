@@ -20,11 +20,21 @@ class Uploadify extends CWidget{
 	}
 
 	public function run(){
-		$this->render('uploadify_view',array(
-			'id'=>get_class($this->model)."_".$this->attr,
-			'name'=>get_class($this->model).'['.$this->attr.']',
-			'value'=>$this->model->{$this->attr},
-		));		
+		if(is_array($this->model->{$this->attr})){
+			foreach($this->model->{$this->attr} as $k=>$v){
+				$this->render('uploadify_view',array(
+				'id'=>get_class($this->model)."_".$this->attr."_".$k,
+				'name'=>get_class($this->model).'['.$this->attr.']['.$k.']',
+				'value'=>$this->model->{$this->attr}[$k],
+				));
+			}
+		}else{
+			$this->render('uploadify_view',array(
+				'id'=>get_class($this->model)."_".$this->attr,
+				'name'=>get_class($this->model).'['.$this->attr.']',
+				'value'=>$this->model->{$this->attr},
+			));
+		}		
 
 	}
 }

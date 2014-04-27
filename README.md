@@ -78,3 +78,31 @@ $(document).ready(function(){
 </body>
 </html>
 ```
+
+#Array Support
+
+This feature is in 'array support' branch.
+
+You can define a array attribute like this:
+
+```php
+class Uesr extends CModel{
+	public $imgs=array("D","s"=>"f2323");
+}
+```
+
+And in the view,you can use like this:
+
+```html
+<?php $this->widget('uploadify', array('model'=>$model,'attr'=>'imgs',));?>
+```
+
+It will automaticly generate the widget:
+
+```html
+<input id="User_imgs_0" type="hidden" value="D" name="User[imgs][0]">
+<input id="yii_uploadify_User_imgs_0" type="file" name="yii_uploadify_User_imgs_0">
+
+<input id="User_imgs_s" type="hidden" value="f2323" name="User[imgs][s]">
+<input id="yii_uploadify_User_imgs_s" type="file" name="yii_uploadify_User_imgs_s">
+```
