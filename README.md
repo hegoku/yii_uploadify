@@ -81,8 +81,6 @@ $(document).ready(function(){
 
 #Array Support
 
-This feature is in 'array support' branch.
-
 You can define a array attribute like this:
 
 ```php
